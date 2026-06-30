@@ -33,6 +33,20 @@ Drag a note onto any page, type your thoughts, and forget about it. The next tim
 
 ---
 
+## 📸 Screenshots
+
+> Add your captures to `store/screenshots/` (see that folder's README for the required filenames and sizes).
+
+| Pinned to a page | Manager popup | Colour palette |
+| --- | --- | --- |
+| ![Note pinned to a page](store/screenshots/01-note-on-page.png) | ![Manager popup](store/screenshots/02-popup-dark.png) | ![Colour palette](store/screenshots/03-note-colors.png) |
+
+| Notes grouped by site | Settings |
+| --- | --- |
+| ![Popup with notes](store/screenshots/04-popup-with-notes.png) | ![Settings page](store/screenshots/05-settings.png) |
+
+---
+
 ## 📦 Installation
 
 ### From source (developer mode)

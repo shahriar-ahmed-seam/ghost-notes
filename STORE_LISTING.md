@@ -78,6 +78,18 @@ productivity, page notes, research, bookmarks, memo, post-it, highlighter
 - [x] 128×128 store icon (PNG) — `icons/icon128.png`
 - [x] Small promo tile 440×280 — `store/promo-small-440x280.png`
 - [x] Marquee promo 1400×560 — `store/promo-marquee-1400x560.png`
-- [ ] At least one 1280×800 (or 640×400) screenshot (capture from a real page)
+- [ ] At least one 1280×800 (or 640×400) screenshot — capture at the exact size; place finals in `store/screenshots/` (see that folder's README)
 - [ ] Privacy policy URL (host PRIVACY.md or link to the repo)
 ```
+
+## Screenshot plan (captured)
+
+| # | File | Caption idea |
+| - | --- | --- |
+| 1 | `01-note-on-page.png` | "Pin a sticky note to any page — it remembers where it belongs." |
+| 2 | `02-popup-dark.png` | "Manage every note from one place. Search, filter, dark mode." |
+| 3 | `03-note-colors.png` | "Seven colours to keep things organised at a glance." |
+| 4 | `04-popup-with-notes.png` | "Notes grouped by site — jump straight back to any page." |
+| 5 | `05-settings.png` | "Fine-tune defaults: colour, scope, font size, and more." |
+
+Re-capture at exactly **1280×800** before uploading; the store rejects other sizes.
