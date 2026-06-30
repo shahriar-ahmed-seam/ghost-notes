@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "Ghost Notes — Sticky Notes for the Web",
+  "version": "3.0.0",
+  "description": "Pin draggable sticky notes to any web page. Multiple notes, colors, per-page/domain/global scopes, instant search, backup & sync.",
+  "author": "Ghost Notes",
+  "minimum_chrome_version": "102",
+  "permissions": ["storage", "contextMenus", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Ghost Notes",
+    "default_icon": {
+      "16": "icons/icon.png",
+      "32": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon.png",
+    "32": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["lib/store.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "commands": {
+    "create_note": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Add a sticky note to the current page"
+    },
+    "toggle_notes": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U",
+        "mac": "Command+Shift+U"
+      },
+      "description": "Show / hide all notes on the current page"
+    }
+  }
+}

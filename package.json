@@ -1,0 +1,19 @@
+{
+  "name": "ghost-notes",
+  "version": "3.0.0",
+  "description": "Pin draggable sticky notes to any web page. Multiple notes, colors, per-page/domain/global scopes, instant search, backup & restore.",
+  "private": true,
+  "scripts": {
+    "test": "node tests/store.test.js",
+    "zip": "node scripts/pack.js"
+  },
+  "keywords": [
+    "chrome-extension",
+    "sticky-notes",
+    "notes",
+    "annotation",
+    "productivity",
+    "manifest-v3"
+  ],
+  "license": "MIT"
+}

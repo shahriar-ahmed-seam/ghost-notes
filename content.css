@@ -1,0 +1,192 @@
+/* Ghost Notes — injected note styles (content.css)
+   Scoped under #ghost-notes-root so we don't leak into the host page. */
+
+#ghost-notes-root {
+  all: initial;
+}
+
+#ghost-notes-root .ghost-note {
+  --gn-bg: #fff9c4;
+  --gn-header: #fbc02d;
+  --gn-text: #4a3c06;
+  --gn-accent: #d4c668;
+
+  position: fixed;
+  top: 60px;
+  left: 60px;
+  width: 260px;
+  height: 220px;
+  min-width: 180px;
+  min-height: 120px;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: var(--gn-bg);
+  border: 1px solid var(--gn-accent);
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+  z-index: 2147483600;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  resize: both;
+  font-family: 'Segoe UI', Tahoma, system-ui, sans-serif;
+  color: var(--gn-text);
+  box-sizing: border-box;
+  animation: gnPop 0.16s ease-out;
+}
+
+#ghost-notes-root .ghost-note.collapsed {
+  height: auto !important;
+  min-height: 0;
+  resize: none;
+}
+#ghost-notes-root .ghost-note.collapsed .ghost-note-body,
+#ghost-notes-root .ghost-note.collapsed .ghost-note-palette {
+  display: none;
+}
+
+@keyframes gnPop {
+  from { transform: scale(0.94); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* header */
+#ghost-notes-root .ghost-note-header {
+  background: var(--gn-header);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  cursor: grab;
+  user-select: none;
+  flex: 0 0 auto;
+}
+#ghost-notes-root .ghost-note-header:active { cursor: grabbing; }
+
+#ghost-notes-root .ghost-note-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gn-text);
+  outline: none;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: inherit;
+}
+#ghost-notes-root .ghost-note-title:focus {
+  background: rgba(255, 255, 255, 0.45);
+}
+#ghost-notes-root .ghost-note-title::placeholder {
+  color: var(--gn-text);
+  opacity: 0.55;
+}
+
+#ghost-notes-root .ghost-note-tools {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 0 0 auto;
+}
+
+#ghost-notes-root .ghost-icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  color: var(--gn-text);
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: opacity 0.15s, background 0.15s;
+}
+#ghost-notes-root .ghost-icon-btn:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.12);
+}
+#ghost-notes-root .ghost-btn-delete:hover { background: rgba(231, 76, 60, 0.25); }
+
+/* colour palette */
+#ghost-notes-root .ghost-note-palette {
+  display: none;
+  gap: 6px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.35);
+  flex-wrap: wrap;
+  flex: 0 0 auto;
+}
+#ghost-notes-root .ghost-note-palette.open { display: flex; }
+#ghost-notes-root .ghost-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+#ghost-notes-root .ghost-swatch:hover { transform: scale(1.15); }
+
+/* body */
+#ghost-notes-root .ghost-note-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+#ghost-notes-root .ghost-note-area {
+  flex: 1 1 auto;
+  width: 100%;
+  border: none;
+  resize: none;
+  background: transparent;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  outline: none;
+  box-sizing: border-box;
+  color: var(--gn-text);
+  font-family: inherit;
+}
+#ghost-notes-root .ghost-note-area::placeholder {
+  color: var(--gn-text);
+  opacity: 0.45;
+}
+
+/* footer */
+#ghost-notes-root .ghost-note-footer {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 5px 10px;
+  border-top: 1px solid var(--gn-accent);
+  background: rgba(255, 255, 255, 0.25);
+}
+#ghost-notes-root .ghost-note-scope {
+  border: 1px solid var(--gn-accent);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--gn-text);
+  font-size: 11px;
+  border-radius: 5px;
+  padding: 2px 4px;
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+}
+#ghost-notes-root .ghost-note-meta {
+  font-size: 10px;
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

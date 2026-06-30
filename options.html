@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ghost Notes — Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="opt-header">
+      <span class="logo">👻</span>
+      <div>
+        <h1>Ghost Notes</h1>
+        <p class="sub">Settings &amp; preferences</p>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Appearance</h2>
+
+      <label class="row">
+        <span class="label">Popup theme</span>
+        <select id="theme">
+          <option value="system">Match system</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </label>
+
+      <label class="row">
+        <span class="label">Default note colour</span>
+        <div id="colorPicker" class="color-picker"></div>
+      </label>
+
+      <label class="row">
+        <span class="label">Note font size</span>
+        <span class="range-wrap">
+          <input type="range" id="fontSize" min="11" max="22" step="1">
+          <output id="fontSizeOut"></output>
+        </span>
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>Behaviour</h2>
+
+      <label class="row">
+        <span class="label">Default scope for new notes
+          <small>Where a new note appears</small>
+        </span>
+        <select id="defaultScope">
+          <option value="url">This page only</option>
+          <option value="domain">Whole site</option>
+          <option value="global">Every website</option>
+        </select>
+      </label>
+
+      <label class="row toggle">
+        <span class="label">Auto-show notes on page load
+          <small>Display saved notes automatically when a matching page opens</small>
+        </span>
+        <input type="checkbox" id="autoShow">
+      </label>
+
+      <label class="row toggle">
+        <span class="label">Confirm before deleting
+          <small>Ask before permanently removing a note</small>
+        </span>
+        <input type="checkbox" id="confirmDelete">
+      </label>
+
+      <label class="row toggle">
+        <span class="label">Spell check
+          <small>Underline misspelled words while typing</small>
+        </span>
+        <input type="checkbox" id="spellcheck">
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>Keyboard shortcuts</h2>
+      <ul class="shortcuts">
+        <li><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Y</kbd> <span>Add a note to the current page</span></li>
+        <li><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd> <span>Show / hide all notes on the page</span></li>
+      </ul>
+      <p class="hint">Change these at <code>chrome://extensions/shortcuts</code></p>
+    </section>
+
+    <section class="card">
+      <h2>Backup &amp; data</h2>
+      <div class="btn-row">
+        <button id="exportBtn" class="btn">⬇ Export all notes</button>
+        <input type="file" id="importFile" accept="application/json,.json" hidden>
+        <button id="importBtn" class="btn">⬆ Import backup</button>
+      </div>
+      <p class="stats" id="dataStats"></p>
+    </section>
+
+    <section class="card danger">
+      <h2>Danger zone</h2>
+      <p>Permanently delete every note across all sites. This cannot be undone.</p>
+      <button id="clearBtn" class="btn btn-danger">Delete all notes</button>
+    </section>
+
+    <p id="status" class="status" aria-live="polite"></p>
+    <footer class="foot">Ghost Notes · v3.0.0</footer>
+  </div>
+
+  <script src="lib/store.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

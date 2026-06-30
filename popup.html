@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ghost Notes</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="gn-header">
+    <div class="gn-brand">
+      <span class="gn-logo">👻</span>
+      <h1>Ghost Notes</h1>
+    </div>
+    <div class="gn-header-actions">
+      <button id="themeBtn" class="gn-icon" title="Toggle theme">🌗</button>
+      <button id="settingsBtn" class="gn-icon" title="Settings">⚙️</button>
+    </div>
+  </header>
+
+  <div class="gn-primary">
+    <button id="addNoteBtn" class="gn-add">＋ Add note to this page</button>
+  </div>
+
+  <div id="statsBar" class="gn-stats" aria-live="polite"></div>
+
+  <div class="gn-toolbar">
+    <input type="search" id="searchInput" placeholder="Search notes…" autocomplete="off">
+    <select id="scopeFilter" title="Filter by scope">
+      <option value="all">All</option>
+      <option value="url">This page</option>
+      <option value="domain">This site</option>
+      <option value="global">Everywhere</option>
+    </select>
+  </div>
+
+  <div id="notesList" class="gn-list" role="list"></div>
+
+  <footer class="gn-footer">
+    <div class="gn-backup">
+      <button id="exportBtn" class="gn-btn">⬇ Export</button>
+      <input type="file" id="importFile" accept="application/json,.json" hidden>
+      <button id="importBtn" class="gn-btn">⬆ Import</button>
+    </div>
+    <p id="statusMsg" class="gn-status" aria-live="polite"></p>
+  </footer>
+
+  <script src="lib/store.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

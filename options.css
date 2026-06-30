@@ -1,0 +1,154 @@
+:root {
+  --bg: #eef0f3;
+  --surface: #ffffff;
+  --text: #2b2f33;
+  --muted: #80868e;
+  --border: #e2e5e9;
+  --brand1: #667eea;
+  --brand2: #764ba2;
+  --danger: #e74c3c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17191d;
+    --surface: #232629;
+    --text: #e6e8eb;
+    --muted: #9aa0a8;
+    --border: #34383f;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+.wrap { max-width: 640px; margin: 0 auto; padding: 28px 18px 60px; }
+
+.opt-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.opt-header .logo { font-size: 38px; }
+.opt-header h1 { margin: 0; font-size: 22px; }
+.opt-header .sub { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+.card h2 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+.row:first-of-type { border-top: none; }
+.label { font-size: 14px; font-weight: 500; display: flex; flex-direction: column; }
+.label small { font-weight: 400; color: var(--muted); font-size: 12px; margin-top: 2px; }
+
+select, .btn {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+select:focus { outline: 2px solid var(--brand1); }
+
+.range-wrap { display: flex; align-items: center; gap: 10px; }
+.range-wrap output {
+  min-width: 38px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+input[type="checkbox"] {
+  width: 44px;
+  height: 24px;
+  appearance: none;
+  background: var(--border);
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex: 0 0 auto;
+}
+input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  top: 3px; left: 3px;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+input[type="checkbox"]:checked { background: var(--brand2); }
+input[type="checkbox"]:checked::after { transform: translateX(20px); }
+
+.color-picker { display: flex; gap: 8px; flex-wrap: wrap; }
+.color-swatch {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.12s;
+}
+.color-swatch:hover { transform: scale(1.12); }
+.color-swatch.active { border-color: var(--text); }
+
+.shortcuts { list-style: none; margin: 0; padding: 0; }
+.shortcuts li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 0; font-size: 13px;
+}
+.shortcuts span { color: var(--muted); }
+kbd {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 2px 7px;
+  font-family: monospace;
+  font-size: 12px;
+}
+.hint { color: var(--muted); font-size: 12px; margin: 12px 0 0; }
+.hint code { background: var(--bg); padding: 2px 6px; border-radius: 4px; }
+
+.btn-row { display: flex; gap: 12px; }
+.btn:hover { border-color: var(--brand1); }
+.btn-danger { color: #fff; background: var(--danger); border-color: var(--danger); }
+.btn-danger:hover { filter: brightness(0.95); border-color: var(--danger); }
+.stats { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
+
+.card.danger { border-color: rgba(231,76,60,0.4); }
+.card.danger p { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+
+.status {
+  text-align: center;
+  min-height: 18px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.status.ok { color: #2e7d32; }
+.status.err { color: var(--danger); }
+.foot { text-align: center; color: var(--muted); font-size: 12px; margin-top: 10px; }
