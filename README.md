@@ -128,9 +128,18 @@ Ghost Notes stores everything locally in your browser and makes **zero** network
 
 ---
 
-## 🛠️ Replacing the icon
+## 🛠️ Regenerating the icons & promo art
 
-The repo ships a single `icons/icon.png`. For the best store presentation, provide crisp square PNGs at 16, 32, 48, and 128 px and update the paths in `manifest.json`.
+Icons and store promo tiles are generated from a dependency-free script that
+draws the ghost mascot as a vector and rasterises crisp PNGs:
+
+```bash
+npm run icons
+```
+
+This produces `icons/icon{16,32,48,128}.png` plus
+`store/promo-small-440x280.png` and `store/promo-marquee-1400x560.png`.
+`icons/icon.svg` is the editable vector master.
 
 ---
 

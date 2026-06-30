@@ -75,9 +75,9 @@ productivity, page notes, research, bookmarks, memo, post-it, highlighter
 
 ## Assets checklist
 
-- [ ] 128×128 store icon (PNG)
-- [ ] At least one 1280×800 (or 640×400) screenshot
-- [ ] Small promo tile 440×280 (optional)
-- [ ] Marquee promo 1400×560 (optional)
+- [x] 128×128 store icon (PNG) — `icons/icon128.png`
+- [x] Small promo tile 440×280 — `store/promo-small-440x280.png`
+- [x] Marquee promo 1400×560 — `store/promo-marquee-1400x560.png`
+- [ ] At least one 1280×800 (or 640×400) screenshot (capture from a real page)
 - [ ] Privacy policy URL (host PRIVACY.md or link to the repo)
 ```

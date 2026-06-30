@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "test": "node tests/store.test.js",
+    "icons": "node scripts/make-icons.js",
     "zip": "node scripts/pack.js"
   },
   "keywords": [
