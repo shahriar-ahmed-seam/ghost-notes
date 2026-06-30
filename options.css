@@ -29,7 +29,7 @@ body {
 .wrap { max-width: 640px; margin: 0 auto; padding: 28px 18px 60px; }
 
 .opt-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
-.opt-header .logo { font-size: 38px; }
+.opt-header .logo { width: 40px; height: 40px; display: block; }
 .opt-header h1 { margin: 0; font-size: 22px; }
 .opt-header .sub { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
 

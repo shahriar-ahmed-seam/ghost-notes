@@ -40,7 +40,7 @@ body {
   justify-content: space-between;
 }
 .gn-brand { display: flex; align-items: center; gap: 8px; }
-.gn-logo { font-size: 20px; }
+.gn-logo { width: 22px; height: 22px; display: block; }
 .gn-header h1 { margin: 0; font-size: 16px; font-weight: 600; }
 .gn-header-actions { display: flex; gap: 4px; }
 .gn-icon {
